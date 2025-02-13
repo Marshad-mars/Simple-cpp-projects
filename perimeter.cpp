@@ -7,7 +7,7 @@ int main(){
     cout << "1.Square" << "\n" << "2. Rectangle" << "\n" << "3.Parellelogram" << "\n" << "4. Rhombus" << "\n" << "5. Trapezium" << "\n" << "   " << endl;
     
     int chos;
-    cout << "Enter your choise: ";
+    cout << "Enter your choise: "; 
     cin >> chos;
     if(chos == 1){
         //perimeter of square-

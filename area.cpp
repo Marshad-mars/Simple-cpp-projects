@@ -58,7 +58,7 @@ int main() {
         //area of Rhombus
         cout << "   " << "\n" << "Find area of Rhombus shaped plain or field~" << endl;
 
-        float base;
+        float base; 
         float height;
         cout << "Enter the base of your Rhombus shaped plain or field: ";
         cin >> base;
