@@ -7,10 +7,10 @@ int main(){
     string chos;
     int n, i, j, val=1;   //extra variable- val;
 
-    cout << " " << "\n" << "Options- Square pattern(sp), Rectangular pattern(rp), Triangular pattern(tp), Floyd's Triangle(ft)" << endl;
+    cout << " " << "\n" << "Options-" << "\n" << "Square pattern(sp)" << "\n" << "Rectangular pattern(rp)" << "\n" << "Triangular pattern(tp)" << "\n" << "Floyd's Triangle(ft)" << "Reverse Triangle(rt)" << endl;
     cout << "Enter your choise: ";
     cin >> chos;
-    if(chos == "sp"){
+    if(chos == "sp"){  //square pattern
         cout << "Square Pattern" << endl;
         cout << "Enter the range(n): ";
         cin >> n;
@@ -21,7 +21,7 @@ int main(){
             cout << endl;
         }
     }
-    else if(chos == "rp"){
+    else if(chos == "rp"){  //rectangular pattern
         int len;
         cout << "Rectangular Pattern" << endl;
         cout << "Enter the range(n): ";
@@ -35,7 +35,7 @@ int main(){
             cout << endl;
         }
     }
-    else if(chos == "tp"){
+    else if(chos == "tp"){  //triangular pattern
         cout << "Triangular Pattern" << endl;
         cout << "Enter the range(n): ";
         cin >> n;
@@ -46,7 +46,7 @@ int main(){
             cout << endl;
         }
     }
-    else if(chos == "ft"){
+    else if(chos == "ft"){  //floyd's triangle
         cout << "Floyd's Triangle" << endl;
         cout << "Enter the range(n): ";
         cin >> n;
@@ -60,6 +60,9 @@ int main(){
             }
             cout << endl;
         }
+    }
+    else if(chos == "rt"){  //reverse triangle
+        cout << "Reverse Triangle" << endl;
     }
     return 0;
 }
