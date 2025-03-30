@@ -1,5 +1,4 @@
 #include<iostream>
-#include<string>
 using namespace std;
 
 int main(){
@@ -7,7 +6,7 @@ int main(){
     int chos;
     int n, i, j, val=1, a, b;   //extra variable- val;
 
-    cout << " " << "\n" << "Options-" << "\n" << "Square pattern(1)" << "\n" << "Rectangular pattern(2)" << "\n" << "Right angled triangular pattern(3)" << "\n" << "Floyd's Triangle(4)" << "\nUp-side down right angled triangle(5)" <<endl;
+    cout << " " << "\n" << "Options-" << "\n" << "~Square pattern(1)" << "\n" << "~Rectangular pattern(2)" << "\n" << "~Right angled triangular pattern(3)" << "\n" << "~Floyd's Triangle(4)" << "\n~Up-side down right angled triangle(5)" << "\n~Mirror right angled triangle(6)" << endl;;
     cout << " " << endl;
     cout << "Enter your choise: ";
     cin >> chos;
@@ -77,6 +76,22 @@ int main(){
                 cout << " *";
             }
             cout << endl;
+        }
+    }
+    else if(chos == 6){
+        cout << "Mirror right angled triangle" << endl;
+        int n, i, a, b, m=1;
+        cout << "Enter the range(n): ";
+        cin >> n;
+        for(i = n; i >= 1; i--){
+            for(a = 1; a <= i-1; a++){
+                cout << "  ";
+            }
+            for(b = 1; b <= m; b++){
+                cout << " *";
+            }
+            cout << endl;
+            m++;
         }
     }
     return 0;
