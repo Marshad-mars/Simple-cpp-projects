@@ -6,7 +6,7 @@ int main(){
     int chos;
     int n, i, j, val=1, a, b;   //extra variable- val;
 
-    cout << " " << "\n" << "Options-" << "\n" << "~Square pattern(1)" << "\n" << "~Rectangular pattern(2)" << "\n" << "~Right angled triangular pattern(3)" << "\n" << "~Floyd's Triangle(4)" << "\n~Up-side down right angled triangle(5)" << "\n~Mirror right angled triangle(6)" << endl;;
+    cout << " " << "\n" << "Options-" << "\n" << "~Square pattern(1)" << "\n" << "~Rectangular pattern(2)" << "\n" << "~Right angled triangular pattern(3)" << "\n" << "~Floyd's Triangle(4)" << "\n~Up-side down right angled triangle(5)" << "\n~Mirror right angled triangle(6)" << "\n~Inverted mirror right angled triangle(7)" << endl;
     cout << " " << endl;
     cout << "Enter your choise: ";
     cin >> chos;
@@ -92,6 +92,29 @@ int main(){
             }
             cout << endl;
             m++;
+        }
+    }
+    else if(chos == 7){
+        cout << "Inverted mirror tight angled triangle" << endl;
+        int n, i, a, b, c;
+        cout << "Enter the raneg(n): ";
+        cin >> n;
+        for(i = n; i >= 1; i--){
+            if(i == n){
+                for(a = 1; a <= i; a++){
+                    cout << " *";
+                }
+                cout << endl;
+            }
+            else{
+                for(b = 1; b <= n-i; b++){
+                    cout << "  ";
+                }
+                for(c = 1; c <= i; c++){
+                    cout << " *";
+                }
+                cout << endl;
+            }
         }
     }
     return 0;
