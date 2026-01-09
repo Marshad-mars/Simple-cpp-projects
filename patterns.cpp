@@ -5,7 +5,7 @@ int main(){
     cout << "               {Find your desired pattern!}" << endl;
     int chos;
     cout << " " << "\n" << "Options-" << "\n" << "~Square pattern(1)" << "\n" << "~Rectangular pattern(2)" << "\n" << "~Right angled triangular pattern(3)" << "\n" << "~Floyd's Triangle(4)" << "\n~Up-side down right angled triangle(5)" << "\n~Mirror right angled triangle(6)" << "\n~Inverted mirror right angled triangle(7)";
-    cout << "\n~Half diamond(8)" << "\n~Mirror half diamond(9)" << "\n~Marshad's_matrix(10)" <<endl;
+    cout << "\n~Half diamond(8)" << "\n~Mirror half diamond(9)" << "\n~Marshad's_matrix(10)" << "\n~Parallelogram(11)" <<endl;
     cout << " " << endl;
 
     cout << "Enter your choise: ";
@@ -173,6 +173,7 @@ int main(){
         }
     }
     else if(chos == 10){
+        cout << "chos-10, Marshad's_matrix" << endl;
         int height;
         cout << "Enter the height of your pattern: ";
         cin >> height;
@@ -191,6 +192,22 @@ int main(){
             value++;
         }
         cout << "Marshad's_Matrix" << endl;
+    } else if(chos == 11){
+        cout << "chose-11, parallelogram" << endl;
+        int height;
+        cout << "Enter the height of your pattern: ";
+        cin >> height;
+        int value = 1;
+        for(int i = 1; i <= height; i++){
+            for(int a = 1; a < i; a++){
+                cout << " " << " ";
+            }
+            for(int b = height; b >= 1; b--){
+                cout << value << " ";
+            }
+            cout << endl;
+            value++;
+        }
     }
     return 0;
 }
