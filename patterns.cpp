@@ -6,7 +6,7 @@ int main(){
     int chos;
     cout << " " << "\n" << "[Options]-" << "\n" << "~Square pattern(1)" << "\n" << "~Rectangular pattern(2)" << "\n" << "~Right angled triangular pattern(3)" << "\n" << "~Floyd's Triangle(4)" << "\n~Up-side down right angled triangle(5)" << "\n~Mirror right angled triangle(6)" << "\n~Inverted mirror right angled triangle(7)";
     cout << "\n~Half diamond(8)" << "\n~Mirror half diamond(9)" << "\n~Parallelogram(10)" << "\n~Even 11's power pyramid(11)" << endl;
-    cout << "\n~Star Pyramid(12)" << endl;
+    cout << "\n~Star Pyramid(12)" << "\n~Diamond(13)" << endl;
     cout << "\n[Special Patterns]-" << endl;
     cout << "~Marshad's_matrix(-1)" << "\n~Number_Funnel(-2)" << endl;
 
@@ -218,6 +218,35 @@ int main(){
             }
             cout << endl;
             space_val--;
+        }
+    } else if(chos == 13){
+        cout << "Diamond" << endl;
+        int height;
+        cout << "Enter the height of your pattern: ";
+        cin >> height;
+
+        int space = height-1;
+        for(int i = 1; i <= height; i++){
+            for(int a = 1; a <= space; a++){
+                cout << " ";
+            }
+            for(int b = 1; b <= i; b++){
+                cout << "*" << " ";
+            }
+            cout << endl;
+            space--;
+        }
+        int space_counter = 1, place_holder = height-1;
+        for(int j = 1; j <= height-1; j++){
+            for(int c = 1; c <= space_counter; c++){
+                cout << " ";
+            }
+            for(int d = 1; d <= place_holder; d++){
+                cout << "*" << " ";
+            }
+            cout << endl;
+            space_counter++;
+            place_holder--;
         }
     } else if(chos == -1){
         cout << "chos-1, Marshad's_matrix" << endl;
