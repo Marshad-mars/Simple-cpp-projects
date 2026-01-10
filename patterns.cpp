@@ -6,7 +6,7 @@ int main(){
     int chos;
     cout << " " << "\n" << "[Options]-" << "\n" << "~Square pattern(1)" << "\n" << "~Rectangular pattern(2)" << "\n" << "~Right angled triangular pattern(3)" << "\n" << "~Floyd's Triangle(4)" << "\n~Up-side down right angled triangle(5)" << "\n~Mirror right angled triangle(6)" << "\n~Inverted mirror right angled triangle(7)";
     cout << "\n~Half diamond(8)" << "\n~Mirror half diamond(9)" << "\n~Parallelogram(10)" << "\n~Even 11's power pyramid(11)" << endl;
-    cout << "\n~Star Pyramid(12)" << "\n~Diamond(13)" << "\n~Hollow_Diamond(14)" << endl;
+    cout << "\n~Star Pyramid(12)" << "\n~Diamond(13)" << "\n~Hollow_Diamond(14)" << "\n~Buttefly_pattern(15)" << endl;
     cout << "\n[Special Patterns]-" << endl;
     cout << "~Marshad's_matrix(-1)" << "\n~Number_Funnel(-2)" << endl;
 
@@ -167,7 +167,7 @@ int main(){
             }
         }
     } else if(chos == 10){
-        cout << "chose11, parallelogram" << endl;
+        cout << "chose10, parallelogram" << endl;
         int height;
         cout << "Enter the height of your pattern: ";
         cin >> height;
@@ -282,7 +282,44 @@ int main(){
             lower_space++;
             lower_core -= 2;
         }
-    } else if(chos == -1){
+    } else if(chos == 15){
+        cout << "chos15, Butterfly_pattern" << endl;
+        int height;
+        cout << "Enter the height of your pattern: ";
+        cin >> height;
+
+        int upper_counter = 1, upper_space = (height-1)+(height-1);
+        for(int i = 1; i <= height; i++){
+            for(int a = 1; a <= upper_counter; a++){
+                cout << "*" << " ";
+            }
+            for(int b = 1; b <= upper_space; b++){
+                cout << " " << " ";
+            }
+            upper_space -= 2;
+            for(int c = 1; c <= upper_counter; c++){
+                cout << "*" << " ";
+            }
+            upper_counter++;
+            cout << endl;
+        }
+        int lower_counter = height, lower_space = 0;
+        for(int j = 1; j <= height; j++){
+            for(int d = 1; d <= lower_counter; d++){
+                cout << "*" << " ";
+            }
+            for(int e = 1; e <= lower_space; e++){
+                cout << " " << " ";
+            }
+            lower_space += 2;
+            for(int f = 1; f <= lower_counter; f++){
+                cout << "*" << " ";
+            }
+            lower_counter--;
+            cout << endl;
+        }
+    }
+    else if(chos == -1){
         cout << "chos-1, Marshad's_matrix" << endl;
         int height;
         cout << "Enter the height of your pattern: ";
