@@ -1,5 +1,6 @@
 #include<iostream>
 #include<string>
+#include<cmath>
 using namespace std;
 
 int binary_converter(int num){ //binary_convert
@@ -30,33 +31,59 @@ string neg_bin_converter(int num){
     } 
     return prefix;
 }
+int decimel_converter(int num){
+    int dec_value = 0, quotiont, remeinder, power_two;
+    string loop_range = to_string(num);
+
+    for(int i = 0; i < size(loop_range); i++){
+        power_two = pow(2, i);
+        remeinder = num % 10;
+        dec_value += remeinder * power_two;
+        num /= 10;
+    }
+    return dec_value;
+}
 int main(){
     char chos;
     cout << "You have two alternatives: \n~Decimal to Binary conversion(A) \n~Binary to Decimal conversion(B)" << endl;
     cout << "Choose your alternative with respect to the given character: ";
     cin >> chos;
     if(chos == 'A'){
-
+        int value, ver;
+        cout << "Enter the decimal value: ";
+        cin >> value;
+        cout << "If the decimal value is negative value then enter(1) and if not then enter(0): ";
+        cin >> ver;
+        while(ver != 1 || ver != 0){
+            cout << "Please enter a value within the range of the given values 1 and 0: ";
+            cin >> ver;
+            if(ver == 1 || ver == 0) break;
+        }
+        if(ver == 1){
+            cout << "This is binary form your given negative integer (-" << value << "): " << neg_bin_converter(value) << endl;
+        }
+        else if(ver == 0){
+            cout << "This is the binary of the gven positive integer (" << value << "): " << binary_converter(value) << endl;
+        }
     }
     else if(chos == 'B'){
-
+        int value, ver;
+        cout << "Please enter the binary value: ";
+        cin >> value;
+        cout << "If the given binary value is negative based then enter-(1) otherwise enter-(0): ";
+        cin >> ver;
+        if(ver == 1){
+            //main code
+        }
+        else if(ver == 0){
+            //main code
+        }
     }
     else{
         while(chos != 'A' || chos != 'B'){
             cout << "Please, enter the character withing given range, A or B: ";
             cin >> chos;
         }
-    }
-    int value, ver;
-    cout << "Enter the decimal value: ";
-    cin >> value;
-    cout << "If the decimal value is negative value then enter(1) and if not then enter(0): ";
-    cin >> ver;
-    if(ver == 1){
-        cout << "This is binary form your given negative integer (-" << value << "): " << neg_bin_converter(value) << endl;
-    }
-    else{
-        cout << "This is the binary of the gven positive integer (" << value << "): " << binary_converter(value) << endl;
     }
     return 0;
 }
