@@ -31,6 +31,22 @@ string neg_bin_converter(int num){
     return prefix;
 }
 int main(){
+    char chos;
+    cout << "You have two alternatives: \n~Decimal to Binary conversion(A) \n~Binary to Decimal conversion(B)" << endl;
+    cout << "Choose your alternative with respect to the given character: ";
+    cin >> chos;
+    if(chos == 'A'){
+
+    }
+    else if(chos == 'B'){
+
+    }
+    else{
+        while(chos != 'A' || chos != 'B'){
+            cout << "Please, enter the character withing given range, A or B: ";
+            cin >> chos;
+        }
+    }
     int value, ver;
     cout << "Enter the decimal value: ";
     cin >> value;
