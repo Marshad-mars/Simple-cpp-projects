@@ -25,6 +25,7 @@ string neg_bin_converter(int num){
         prefix[size_prefix - 1] = '1';
     }
     else if(prefix[size_prefix - 1] == '1'){ //adding 1 when the units is 1
+        prefix[size_prefix - 1] = '0';
         prefix[size_prefix - 2] = '1';
     } 
     return prefix;
