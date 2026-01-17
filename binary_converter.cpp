@@ -1,8 +1,18 @@
 #include<iostream>
 #include<string>
 #include<cmath>
+#include<thread>
+#include<chrono>
 using namespace std;
 
+void countdown(){
+    cout << "       processing";
+    for(int i = 1; i <= 3; i++){
+        this_thread::sleep_for(chrono::seconds(1));
+        cout << "*" << flush;
+    }
+    cout << endl;
+}
 int binary_converter(int num){ //binary_convert
     int power_ten = 1, binary_value = 0, remeinder, reference_value = num;
     while(num != 0){
@@ -31,7 +41,7 @@ string neg_bin_converter(int num){
     } 
     return prefix;
 }
-int decimel_converter(int num){
+int decimal_converter(int num){
     int dec_value = 0, quotiont, remeinder, power_two;
     string loop_range = to_string(num);
 
@@ -43,46 +53,52 @@ int decimel_converter(int num){
     }
     return dec_value;
 }
+int neg_dec_converter(int value){
+    
+}
 int main(){
     char chos;
-    cout << "You have two alternatives: \n~Decimal to Binary conversion(A) \n~Binary to Decimal conversion(B)" << endl;
+    cout << "You have two alternatives: \n    ~Decimal to Binary conversion(A) \n    ~Binary to Decimal conversion(B)" << endl;
     cout << "Choose your alternative with respect to the given character: ";
     cin >> chos;
-    if(chos == 'A'){
+    if(chos == 'A'){ //decimal to binary conversion
         int value, ver;
         cout << "Enter the decimal value: ";
         cin >> value;
         cout << "If the decimal value is negative value then enter(1) and if not then enter(0): ";
         cin >> ver;
-        while(ver != 1 || ver != 0){
+        while(ver != 1 && ver != 0){
             cout << "Please enter a value within the range of the given values 1 and 0: ";
             cin >> ver;
             if(ver == 1 || ver == 0) break;
         }
-        if(ver == 1){
+        if(ver == 1){ //for negative values
+            countdown();
             cout << "This is binary form your given negative integer (-" << value << "): " << neg_bin_converter(value) << endl;
         }
-        else if(ver == 0){
+        else if(ver == 0){ //for positive values
+            countdown();
             cout << "This is the binary of the gven positive integer (" << value << "): " << binary_converter(value) << endl;
         }
     }
-    else if(chos == 'B'){
+    else if(chos == 'B'){ //binary to decimal conversion
         int value, ver;
         cout << "Please enter the binary value: ";
         cin >> value;
         cout << "If the given binary value is negative based then enter-(1) otherwise enter-(0): ";
         cin >> ver;
-        if(ver == 1){
-            //main code
+        while(ver != 1 && ver != 0){
+            cout << "Please enter a value within the given range of values, 1 and 0: ";
+            cin >> ver;
+            if(ver == 1 || ver == 0) break;
         }
-        else if(ver == 0){
-            //main code
+        if(ver == 1){ //for negative values
+            countdown();
+            cout << "The negative_decimal form of the given negative_binary number: " << neg_dec_converter(value) << endl;
         }
-    }
-    else{
-        while(chos != 'A' || chos != 'B'){
-            cout << "Please, enter the character withing given range, A or B: ";
-            cin >> chos;
+        else if(ver == 0){ //for positive values
+            countdown();
+            cout << "The decimal form of the given binary number: " << decimal_converter(value) << endl;
         }
     }
     return 0;
