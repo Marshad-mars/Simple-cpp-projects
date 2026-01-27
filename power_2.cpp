@@ -18,3 +18,5 @@ int main(){
     else cout << "The given value is not a power of 2" << endl;
     return 0;
 }
+//but this problem could also be solved by the help of bitwise operation. There if the binary form of the given value is composed 
+//   only one 1 and rest all the bits are 0, then the given number would be considered a valuhe which is power of 2.
