@@ -40,4 +40,4 @@ int main(){
     
     return 0;
 }
-//manual conversion by the process of continuous division and mod check 
+//manual checking by the process of continuous division and mod check 
